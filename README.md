@@ -1,15 +1,15 @@
 # Muse-MotorImageryClassification
-The project is aimed at creating a Left-Right Motor Imagery Classifier using CNN.
+The project is aimed at creating a Real-time Left-Right Motor Imagery Classifier using CNN. Device used is a Muse 2 brain sensing headband with 4 electrode channels - TP9, AF7, AF8, TP10. Data is streamed using the 'Mind Monitor' app.
 
 Following codes have been implemented till now:
 
-OSC_Record_MotorImagery - 
+MotorImagery_OSC_Record - 
 1) Record and save EEG data as CSV files from a Muse 2 headband using the MInd Monitor app and python osc module.
+2) Events can be configured in the rec_dictionary
 
-Classifier_MotorImagery - 
-1) Loads the CSV data recordings into a Pandas dataframe.
-2) Convert the data into MNE epochs, then perform continuous wavelet transform (CWT) and save as scaleograms.
-3) Create a new dataframe with the scaleogram paths and labels.
-4) Create a model using the Pytorch lightning module and train the model.
+MotorImagery_Training - 
+1) Configure and train a CNN model based on 'EEG-ITNet'
+2) Load the CSV data recordings into a Pandas dataframe and convert into MNE epochs for training
 
-Work is still in progress, model needs improvement.
+MotorImagery_OSC_Predict -
+1) Make real time predictions using the trained model.
